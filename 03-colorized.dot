@@ -1,7 +1,6 @@
 graph {
 	//note: style=filled!
 	node [shape=box colorscheme=paired12 style=filled]
-	rankdir=LR
 	margin=0.1
 	a[fillcolor=1]
 	b[fillcolor=3]

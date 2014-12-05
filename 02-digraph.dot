@@ -1,0 +1,6 @@
+digraph {
+	node [shape=box]
+	rankdir=LR
+	margin=0.1
+	a->b
+}
