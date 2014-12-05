@@ -7,14 +7,12 @@ TARGETS = $(TARGETS_PDF) $(TARGETS_PNG) $(TARGETS_TIF)
 
 %.pdf:%.dot Makefile
 	dot -Tpdf "$<" -o "$@"
-	type -p pdfoptimize>/dev/null && pdfoptimize "$@"
-
-%.png:%.pdf Makefile
-	convert -density 600 -scale 25% -trim -trim "$<" "$@"
-	type -p optipng>/dev/null && optipng "$@"
 
 %.tiff:%.pdf Makefile
-	convert -density 600 -compress Fax -trim -trim "$<" "$@"
+	convert -density 600 -compress Zip -trim -trim "$<" "$@"
+
+%.png:%.tiff Makefile
+	convert -filter Box -resize 25% "$<" "$@"
 
 all: $(TARGETS)
 
