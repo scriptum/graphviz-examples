@@ -1,4 +1,5 @@
 digraph {
+	//http://www.graphviz.org/doc/info/colors.html
 	//note: style=filled!
 	node [shape=box colorscheme=paired12 style=filled]
 	rankdir=LR
