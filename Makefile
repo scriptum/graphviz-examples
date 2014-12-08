@@ -2,8 +2,8 @@ SRC_DOT = $(wildcard *.dot)
 
 TARGETS_PDF = $(SRC_DOT:.dot=.pdf)
 TARGETS_PNG = $(SRC_DOT:.dot=.png)
-TARGETS_TIF = $(SRC_DOT:.dot=.tiff)
-TARGETS = $(TARGETS_PDF) $(TARGETS_PNG) $(TARGETS_TIF)
+TARGETS_TIFF = $(SRC_DOT:.dot=.tiff)
+TARGETS = $(TARGETS_PDF) $(TARGETS_PNG) $(TARGETS_TIFF)
 
 %.pdf:%.dot Makefile
 	dot -Tpdf "$<" -o "$@"
