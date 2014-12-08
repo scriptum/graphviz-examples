@@ -5,6 +5,8 @@ TARGETS_PNG = $(SRC_DOT:.dot=.png)
 TARGETS_TIFF = $(SRC_DOT:.dot=.tiff)
 TARGETS = $(TARGETS_PDF) $(TARGETS_PNG) $(TARGETS_TIFF)
 
+all: $(TARGETS)
+
 %.pdf:%.dot Makefile
 	dot -Tpdf "$<" -o "$@"
 
@@ -13,8 +15,6 @@ TARGETS = $(TARGETS_PDF) $(TARGETS_PNG) $(TARGETS_TIFF)
 
 %.png:%.tiff Makefile
 	convert -filter Box -resize 25% -dither None -colors 256 "$<" "$@"
-
-all: $(TARGETS)
 
 pdf: $(TARGETS_PDF)
 
