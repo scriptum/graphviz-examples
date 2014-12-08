@@ -12,7 +12,7 @@ TARGETS = $(TARGETS_PDF) $(TARGETS_PNG) $(TARGETS_TIF)
 	convert -density 600 -compress Zip -trim -trim "$<" "$@"
 
 %.png:%.tiff Makefile
-	convert -filter Box -resize 25% "$<" "$@"
+	convert -filter Box -resize 25% -dither None -colors 256 "$<" "$@"
 
 all: $(TARGETS)
 
